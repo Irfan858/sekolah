@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Post;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
@@ -15,4 +16,14 @@ class Category extends Model
      * @var array
      */
     protected $guarded = [];
+
+    /**
+     * post
+     * 
+     * @return void
+     */
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
